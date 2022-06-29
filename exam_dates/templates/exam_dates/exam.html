@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+    Exam-Dates
+{% endblock %}
+
+{% block content %}
+    <div class="container text-right" dir="rtl">
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+                <h3 class="text-center"><b>تاریخ امتحانات</b></h3>
+                <hr>
+                {% for exam in exams %}
+                    <table class="table table-striped table-dark">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col" colspan="5">{{ exam.name_cors }}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">+</th>
+                            <td>{{ exam.date_exam }}</td>
+                            <td>{{ exam.time_exam }}</td>
+                            <td>{{ exam.days_left }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
